@@ -1,0 +1,24 @@
+/* components/category/category.wxss */
+.container{
+  height : 100%;
+  display: flex;
+  flex-direction: column;
+}
+.category{
+  padding:30rpx 0 30rpx 30rpx;
+}
+.category-swiper { 
+  height : 150rpx;
+}
+.category-swiper-item {
+  width: 300rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+  background-image: linear-gradient(to right, #e68d44, #eb6d59);
+}
+.category-name{
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  color: #fff;
+}

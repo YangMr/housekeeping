@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-category" : "../../components/category/category"
+  },
+  "navigationBarTitleText": "服务广场",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FBC020"
+}

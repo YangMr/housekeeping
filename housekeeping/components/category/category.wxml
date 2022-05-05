@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="category" slot="extend">
+    <swiper class="category-swiper" next-margin="60rpx" display-multiple-items="{{2}}">
+      <swiper-item wx:for="{{categoryList}}" wx:key="index">
+        <view class="category-swiper-item" data-id="{{item.id}}" bindtap="handleCategoryChange">
+          <text class="category-name">{{item.name}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+
+// 初始化一个变量,用来保存触摸开始的坐标
+var touchStartX
+
+// 触摸开始方法
+function handleTouchStart(event) {
+  touchStartX = event.changedTouches[0].clientX
+}
+
+
+// 触摸结束的方法
+function handleTouchEnd(event,ownerInstance) {
+
+
+
+  var touchEndX = event.changedTouches[0].clientX
+
+  // direction 0 表示不进行滑动   1 前进   -1 后退
+  var direction = 0
+  
+  // 结束的坐标位置 - 开始的坐标位置
+  var distance = touchStartX - touchEndX 
+
+
+  if(distance >  0 && distance > 70){
+    direction = 1 
+  }
+
+  if(distance <  0 && distance < -70){
+    direction = -1
+  }
+
+  ownerInstance.callMethod("hanleTouchMove",{direction})
+}
+
+module.exports = {
+  handleTouchStart : handleTouchStart,
+  handleTouchEnd : handleTouchEnd
+}
