@@ -3,7 +3,7 @@
     <i-category slot="extend" bind:change="handleCategoryChange" categoryList="{{categoryList}}"></i-category>  
     
     <view slot="panel">
-      <view wx:for="{{serviceList.data}}" wx:key="index">
+      <view wx:for="{{serviceList}}" wx:key="index">
        
         <i-service-preview service="{{item}}"></i-service-preview>
       </view>

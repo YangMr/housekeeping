@@ -1,6 +1,7 @@
 // pages/home/home.js
 import {throttle} from "../../utils/utils"
 import Service from "../../models/service"
+const service = new Service()
 import Category from "../../models/category"
 Page({
 
@@ -8,17 +9,28 @@ Page({
    * tab切换方法
    */
   handleTabChange : throttle(function (event) {
-    console.log(event.detail.index)
-  
+    if(this.data.tabIndex === event.detail.index){
+      return
+    }
+    const tabIndex = event.detail.index
+    this.setData({
+      tabIndex
+    })
+    this._getServiceList()
   },500),
 
   /**
    * 分类方法
    */
   handleCategoryChange : throttle(function (event){
-
-    console.log(event)
-    const id = event.detail.id
+    if(this.data.categoryId === event.detail.id){
+      return
+    } 
+    const categoryId = event.detail.id
+    this.setData({
+      categoryId 
+    })
+    this._getServiceList()
   }),
 
   
@@ -29,7 +41,8 @@ Page({
   data: {
     tabs: ['全部服务', '在提供', '正在找'],
     categoryList: [],
-    currentTab: 0,
+    tabIndex: 0,
+    categoryId : 0,
     serviceList : []
   },
 
@@ -45,7 +58,7 @@ Page({
    * 获取服务列表数据
    */
   async _getServiceList(){
-    const serviceList = await Service.getServiceList()
+    const serviceList = await service.reset().getServiceList(this.data.categoryId, this.data.tabIndex)
     this.setData({
       serviceList
     })
@@ -92,15 +105,30 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: async function () {
+    this._getCategoryList()
 
+    wx.stopPullDownRefresh()
   },
+
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: async function () {
+    if(!service.hasMoreData){
+      wx.showToast({
+        title: '已经是到底了!!!',
+        icon : "none",
+        duration : 500
+      })
+      return 
+    }
 
+    const serviceList = await service.getServiceList(this.data.categoryId, this.data.tabIndex)
+    this.setData({
+      serviceList
+    })
   },
 
   /**

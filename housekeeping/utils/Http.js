@@ -8,46 +8,54 @@ class Http {
     method = "GET",
     header = {}
   }) {
-    const res = await wxToPromise("request", {
-      url: APIConfig.baseUrl + url,
-      method,
-      data,
-      header
-    })
+    try {
+      wx.showLoading()
+      const res = await wxToPromise("request", {
+        url: APIConfig.baseUrl + url,
+        method,
+        data,
+        header
+      })
 
-    if (res.statusCode < 400) {
-      return res.data.data
+      if (res.statusCode < 400) {
+        wx.hideLoading()
+        return res.data.data
+      }
+
+      if (res.statusCode === 401) {
+        // TODO 令牌的过期处理
+        wx.hideLoading()
+        return
+      }
+
+
+      wx.hideLoading()
+      Http._showError(res.data.error_code, res.data.message)
+    }catch(err){
+      wx.hideLoading()
+      Http._showError("","网络异常")
     }
 
-    if(res.statusCode === 401){
-      // TODO 令牌的过期处理
-      return 
-    }
 
-    console.log(res)
-
-    Http._showError(res.data.error_code, res.data.message)
-    
   }
 
-  static _showError(errorCode, message){
-    let title 
+  static _showError(errorCode, message) {
+    let title
 
-    const errorMessage  = exceptionMessage[errorCode]
+    const errorMessage = exceptionMessage[errorCode]
 
     title = errorMessage || message || "未知错误"
 
-   
+
 
     title = typeof title === "object" ? Object.values(title).join() : title
 
     wx.showToast({
       title,
-      icon : "none",
-      duration :3000
+      icon: "none",
+      duration: 3000
     })
   }
 
 }
 export default Http
-

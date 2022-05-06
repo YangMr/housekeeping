@@ -1,4 +1,3 @@
-@import "/iconfont/iconfont.wxss";
 .container{
     box-sizing: border-box;
     display: flex;
@@ -71,6 +70,8 @@
 .score{
     color : #f27013;
     margin-left : 20rpx;
+    display: flex;
+    align-items: center;
 }
 .create-time{
     color : #888888;
@@ -89,4 +90,11 @@
 .label{
     color : red;
     font-size : 22rpx;
+}
+.category-text{
+    margin-left:20rpx;
+}
+.score-text{
+    margin-left:5rpx;
+    font-size:26rpx;
 }

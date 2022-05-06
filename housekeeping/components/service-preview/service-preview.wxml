@@ -7,8 +7,10 @@
     <view class="row">
       <view class="service-title">{{service.title}}</view>
       <view class="category">
-        <view class="iconfont icon-biaoqian" style="font-size:40rpx; color : #fbc02d; margin-right:20rpx;"></view>
-        {{service.category.name}}
+        <i-icon name="biaoqian" color ="#f27013" ></i-icon>
+        <view class="category-text">
+          {{service.category.name}}
+        </view>
       </view>
     </view>
     <view class="row">
@@ -19,8 +21,11 @@
         <view class="publisher-nickname">{{service.publisher.nickname}}</view>
       </view>
       <view class="score">
-        <!-- <view class="iconfont icon-star" style="font-size:40rpx; color : #fbc02d; margin-right:20rpx;"></view> -->
-        {{service.score}}
+        <i-icon name="star" color="#fbc02d"></i-icon>
+        <view class="score-text">
+          {{service.score}}
+        </view>
+        
       </view>
     </view>
     <view class="row">

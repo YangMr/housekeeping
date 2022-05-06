@@ -16,7 +16,8 @@ class Category{
    */
   static async getCategoryListWithAll(){
     const categoryList = await Category.getCategoryList()
-    categoryList.unshift({id : 0, name : "全部"})
+
+    if(categoryList && categoryList.length > 0) categoryList.unshift({id : 0, name : "全部"})
     return categoryList
   }
 }

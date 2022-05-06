@@ -4,5 +4,7 @@
   },
   "navigationBarTitleText": "服务广场",
   "navigationBarTextStyle": "black",
-  "navigationBarBackgroundColor": "#FBC020"
+  "navigationBarBackgroundColor": "#FBC020",
+  "enablePullDownRefresh": true,
+  "backgroundColorBottom": "#efefef"
 }
