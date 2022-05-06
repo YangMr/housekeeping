@@ -1,5 +1,7 @@
 // pages/home/home.js
 import {throttle} from "../../utils/utils"
+import Service from "../../models/service"
+import Category from "../../models/category"
 Page({
 
   /**
@@ -26,27 +28,37 @@ Page({
    */
   data: {
     tabs: ['全部服务', '在提供', '正在找'],
-    categoryList: [{
-        "id": 1,
-        "name": "保洁"
-      },
-      {
-        "id": 2,
-        "name": "汽修"
-      },
-      {
-        "id": 3,
-        "name": "疏通"
-      }
-    ],
-    currentTab: 0
+    categoryList: [],
+    currentTab: 0,
+    serviceList : []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this._getServiceList()
+    this._getCategoryList()
+  },
 
+  /**
+   * 获取服务列表数据
+   */
+  async _getServiceList(){
+    const serviceList = await Service.getServiceList()
+    this.setData({
+      serviceList
+    })
+  },
+
+  /**
+   * 获取分类列表的数据
+   */
+  async _getCategoryList(){
+    const categoryList = await Category.getCategoryListWithAll()
+    this.setData({
+      categoryList
+    })
   },
 
   /**

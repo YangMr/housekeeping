@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" wx:if="{{categoryList.length > 0}}">
   <view class="category" slot="extend">
     <swiper class="category-swiper" next-margin="60rpx" display-multiple-items="{{2}}">
       <swiper-item wx:for="{{categoryList}}" wx:key="index">

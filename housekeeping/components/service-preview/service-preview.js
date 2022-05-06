@@ -1,10 +1,10 @@
-// components/category/category.js
+// components/service-preview/service-preview.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    categoryList : Array
+    service :Object
   },
 
   /**
@@ -18,9 +18,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handleCategoryChange(event){
-      const id = event.currentTarget.dataset.id
-      this.triggerEvent("change",{id})
-    }
+
   }
 })

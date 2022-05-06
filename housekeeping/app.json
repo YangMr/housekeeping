@@ -42,7 +42,8 @@
         ]
     },
     "usingComponents": {
-        "i-tabs" : "/components/tabs/tabs"
+        "i-tabs" : "/components/tabs/tabs",
+        "i-service-preview" : "/components/service-preview/service-preview"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"

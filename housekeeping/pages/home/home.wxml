@@ -2,36 +2,13 @@
   <i-tabs tabs="{{tabs}}" bind:change="handleTabChange">
     <i-category slot="extend" bind:change="handleCategoryChange" categoryList="{{categoryList}}"></i-category>  
     
-
-    <view class="tab-panel" style="background-color: yellow;" slot="panel">
-123
-        <!-- 
-        触摸开始   touchstart  event   x y 坐标  x : 100
-
-        触摸结束   touchend   event x y 坐标   x : 200 
-
-        右 起始点 200 -- 左 结束点 100    前进   200 - 100 = 100  正
-        
-        左 100 起始点 -- 右 200   结束点    后退    100 - 200 = -100 负
-
-        > 70 
-        diect 0  
-
-     
-
-        左 ?  右?  
-        
-
-        
-        上 ?  下? 
-        
-        
-        
-        -->
-      
+    <view slot="panel">
+      <view wx:for="{{serviceList.data}}" wx:key="index">
+       
+        <i-service-preview service="{{item}}"></i-service-preview>
+      </view>
     </view>
   </i-tabs>
-  
   
 </view>
 
