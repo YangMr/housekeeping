@@ -1,0 +1,235 @@
+<!--
+此文件为开发者工具生成，生成时间: 2022/5/7 上午11:28:03
+使用方法：
+在 /Users/yangling/Desktop/1907/2105B/家政小程序项目/housekeeping/pages/home/home.wxml 引入模板
+
+```
+<import src="home.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/yangling/Desktop/1907/2105B/家政小程序项目/housekeeping/pages/home/home.wxss 中引入样式
+```
+@import "./home.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view is="components/tabs/tabs">
+        <view class="tabs--container">
+          <view class="tabs--tabs">
+            <view class="tabs--tab-item" data-index="0">
+              <view class="tabs--tab-label tabs--active-tab sk-transparent sk-text-14-2857-431 sk-text">
+                全部服务
+              </view>
+              <view class="tabs--divider"></view>
+            </view>
+            <view class="tabs--tab-item" data-index="1">
+              <view class="tabs--tab-label sk-transparent sk-text-14-2857-350 sk-text">
+                在提供
+              </view>
+            </view>
+            <view class="tabs--tab-item" data-index="2">
+              <view class="tabs--tab-label sk-transparent sk-text-14-2857-338 sk-text">
+                正在找
+              </view>
+            </view>
+          </view>
+          <view is="components/category/category">
+            <view class="category--container">
+              <view class="category--category">
+                <swiper class="category--category-swiper" display-multiple-items="2" next-margin="60rpx" current="0" autoplay="false">
+                  <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+                    <view class="category--category-swiper-item sk-image" data-id="0">
+                      <text class="category--category-name sk-transparent sk-text-14-2857-17 sk-text">全部</text>
+                    </view>
+                  </swiper-item>
+                </swiper>
+              </view>
+            </view>
+          </view>
+          <view class="tabs--tab-panel">
+            <view>
+              <view>
+                <view is="components/service-preview/service-preview" data-service="[object Object]">
+                  <view class="preview--container">
+                    <view class="preview--left">
+                      <image class="preview--cover-image sk-image"></image>
+                      <text class="preview--type-tag sk-transparent sk-text-14-2857-586 sk-text">在提供</text>
+                    </view>
+                    <view class="preview--right">
+                      <view class="preview--row">
+                        <view class="preview--service-title sk-transparent sk-text-14-2857-261 sk-text">会做饭的保姆</view>
+                        <view class="preview--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #f27013"></view>
+                          </view>
+                          <view class="preview--category-text sk-transparent sk-text-14-2857-628 sk-text">
+                            保洁
+                          </view>
+                        </view>
+                      </view>
+                      <view class="preview--row">
+                        <view class="preview--publisher">
+                          <view class="preview--publisher-avatar">
+                            <image class="preview--publisher-avatar-image sk-image"></image>
+                          </view>
+                          <view class="preview--publisher-nickname sk-transparent sk-text-14-2857-858 sk-text">不多</view>
+                        </view>
+                        <view class="preview--score">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #fbc02d"></view>
+                          </view>
+                          <view class="preview--score-text sk-transparent sk-opacity">
+                            0
+                          </view>
+                        </view>
+                      </view>
+                      <view class="preview--row">
+                        <view class="preview--create-time sk-transparent sk-text-14-2857-357 sk-text">2022-05-01 18:41:49</view>
+                      </view>
+                      <view class="preview--row preview--row-last">
+                        <view class="preview--price sk-transparent">
+                          <text class="sk-transparent sk-opacity">¥</text>398.00
+                        </view>
+                        <view class="preview--sales sk-transparent sk-text-14-2857-221 sk-text">
+                          已售 0
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view is="components/service-preview/service-preview" data-service="[object Object]">
+                  <view class="preview--container">
+                    <view class="preview--left">
+                      <image class="preview--cover-image sk-image"></image>
+                      <text class="preview--type-tag sk-transparent sk-text-14-2857-477 sk-text">在提供</text>
+                    </view>
+                    <view class="preview--right">
+                      <view class="preview--row">
+                        <view class="preview--service-title sk-transparent sk-text-14-2857-812 sk-text">油烟机清洗套餐2</view>
+                        <view class="preview--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #f27013"></view>
+                          </view>
+                          <view class="preview--category-text sk-transparent sk-text-14-2857-153 sk-text">
+                            保洁
+                          </view>
+                        </view>
+                      </view>
+                      <view class="preview--row">
+                        <view class="preview--publisher">
+                          <view class="preview--publisher-avatar">
+                            <image class="preview--publisher-avatar-image sk-image"></image>
+                          </view>
+                          <view class="preview--publisher-nickname sk-transparent sk-text-14-2857-360 sk-text">椰子</view>
+                        </view>
+                        <view class="preview--score">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #fbc02d"></view>
+                          </view>
+                          <view class="preview--score-text sk-transparent sk-opacity">
+                            0
+                          </view>
+                        </view>
+                      </view>
+                      <view class="preview--row">
+                        <view class="preview--create-time sk-transparent sk-text-14-2857-511 sk-text">2022-04-25 17:06:53</view>
+                      </view>
+                      <view class="preview--row preview--row-last">
+                        <view class="preview--price sk-transparent">
+                          <text class="sk-transparent sk-opacity">¥</text>21000.00
+                        </view>
+                        <view class="preview--sales sk-transparent sk-text-14-2857-840 sk-text">
+                          已售 0
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view is="components/service-preview/service-preview" data-service="[object Object]">
+                  <view class="preview--container">
+                    <view class="preview--left">
+                      <image class="preview--cover-image sk-image"></image>
+                      <text class="preview--type-tag sk-transparent sk-text-14-2857-398 sk-text">正在找</text>
+                    </view>
+                    <view class="preview--right">
+                      <view class="preview--row">
+                        <view class="preview--service-title sk-transparent sk-text-14-2857-57 sk-text">修汽车发动机人员</view>
+                        <view class="preview--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #f27013"></view>
+                          </view>
+                          <view class="preview--category-text sk-transparent sk-text-14-2857-184 sk-text">
+                            汽修
+                          </view>
+                        </view>
+                      </view>
+                      <view class="preview--row">
+                        <view class="preview--publisher">
+                          <view class="preview--publisher-avatar">
+                            <image class="preview--publisher-avatar-image sk-image"></image>
+                          </view>
+                          <view class="preview--publisher-nickname sk-transparent sk-opacity">Jie</view>
+                        </view>
+                        <view class="preview--score">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-star sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #fbc02d"></view>
+                          </view>
+                          <view class="preview--score-text sk-transparent sk-opacity">
+                            0
+                          </view>
+                        </view>
+                      </view>
+                      <view class="preview--row">
+                        <view class="preview--create-time sk-transparent sk-text-14-2857-433 sk-text">2022-04-25 12:54:22</view>
+                      </view>
+                      <view class="preview--row preview--row-last">
+                        <view class="preview--price sk-transparent">
+                          <text class="sk-transparent sk-opacity">¥</text>2000.00
+                        </view>
+                        <view class="preview--sales sk-transparent sk-text-14-2857-470 sk-text">
+                          已售 0
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view>
+                <view is="components/service-preview/service-preview" data-service="[object Object]">
+                  <view class="preview--container">
+                    <view class="preview--left">
+                      <image class="preview--cover-image sk-image"></image>
+                      <text class="preview--type-tag sk-transparent sk-text-14-2857-330 sk-text">在提供</text>
+                    </view>
+                    <view class="preview--right">
+                      <view class="preview--row">
+                        <view class="preview--service-title sk-transparent sk-text-14-2857-169 sk-text">提供搬家服务</view>
+                        <view class="preview--category">
+                          <view is="components/icon/icon">
+                            <view class="icon--iconfont icon--icon-biaoqian sk-pseudo sk-pseudo-circle" style="font-size:17px; color : #f27013"></view>
+                          </view>
+                          <view class="preview--category-text sk-transparent sk-text-14-2857-743 sk-text">
+                            搬运
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

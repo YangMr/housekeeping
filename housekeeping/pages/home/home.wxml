@@ -1,14 +1,22 @@
-<view class="container">
+<import src="home.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+<view class="container" wx:else>
   <i-tabs tabs="{{tabs}}" bind:change="handleTabChange">
     <i-category slot="extend" bind:change="handleCategoryChange" categoryList="{{categoryList}}"></i-category>  
     
     <view slot="panel">
       <view wx:for="{{serviceList}}" wx:key="index">
        
-        <i-service-preview service="{{item}}"></i-service-preview>
+        <i-service-preview service="{{item}}" bind:tap="handleSelectService" data-service="{{item}}"></i-service-preview>
       </view>
     </view>
   </i-tabs>
   
 </view>
 
+<!-- 小程序: 
+  小程序开发工具会帮我们自动生成骨架屏样式
+
+  自己去写骨架屏
+
+  第三方ui框架骨架屏 -->

@@ -1,13 +1,8 @@
 import Http from "../utils/Http"
-
-class Service {
-  page = 1
-  count = 4
-  data = []
-  // hasMoreData 为false表示已经加载到最后一页
-  hasMoreData = true
-
+import Base from "./base";
+class Service extends Base{
   
+
 
   /**
    * 
@@ -42,13 +37,19 @@ class Service {
 
   }
 
-  reset(){
-    this.page = 1
-    this.count = 4
-    this.data = []
-    this.hasMoreData = true
-    return this
+
+  /**
+   * 查询指定服务id的数据
+   * @param {*} id 
+   */
+  static getServiceDetail(id){
+    return Http.request({
+      url : `/v1/service/${id}`,
+      method : "GET"
+    })
   }
+
+  
 
 }
 

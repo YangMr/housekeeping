@@ -43,17 +43,23 @@ Page({
     categoryList: [],
     tabIndex: 0,
     categoryId : 0,
-    serviceList : []
+    serviceList : [],
+    loading : true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    this._getServiceList()
-    this._getCategoryList()
+  onLoad: async function (options) {
+    await this._getServiceList()
+    await this._getCategoryList()
+    this.setData({
+      loading : false
+    })
   },
 
+
+  
   /**
    * 获取服务列表数据
    */
@@ -71,6 +77,19 @@ Page({
     const categoryList = await Category.getCategoryListWithAll()
     this.setData({
       categoryList
+    })
+  },
+
+  /**
+   * 跳转到服务详情页面
+   */
+  handleSelectService(event){
+    
+    const serviceId = event.currentTarget.dataset.service.id
+    
+
+    wx.navigateTo({
+      url: '/pages/service-detail/service-detail?serviceId=' + serviceId
     })
   },
 

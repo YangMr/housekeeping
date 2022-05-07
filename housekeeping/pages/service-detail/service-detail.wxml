@@ -1,0 +1,91 @@
+<wxs src="../../common/wxs/status-text.wxs" module="status"></wxs>
+<view class="container">
+  <view class="service-info">
+    <image class="cover-image" src="{{serviceDetail.cover_image.path}}"></image>
+    <view class="row">
+      <view class="title">
+        {{serviceDetail.title}}
+      </view>
+      <view class="category">
+        <i-icon name="biaoqian" color="#f27013"></i-icon>
+        <view class="tag-text">
+          {{serviceDetail.category.name}}
+        </view>
+      </view>
+    </view>
+    <view class="row">
+      <i-avatar src="{{serviceDetail.publisher.avatar}}" size="60" text="{{serviceDetail.publisher.nickname}}" fontSize="28"></i-avatar>
+      <view class="score">
+        <i-icon name="star"></i-icon>
+        <view class="text">{{serviceDetail.score}}</view>
+      </view>
+    </view>
+    <view class="row">
+      <view class="create-time">{{serviceDetail.create_time}}</view>
+    </view>
+    <view class="row">
+      <view class="price">
+        <text>¥</text>{{serviceDetail.price}}
+      </view>
+      <view class="sales">
+        已售 {{serviceDetail.sales_volume}}
+      </view>
+    </view>
+    <view class="row row-space-between">
+      <view class="description">{{serviceDetail.description}}</view>
+    </view>
+  </view>
+  <view class="service-status" wx:if="{{isPublisher}}">
+    <view class="title">
+      服务状态
+    </view>
+    <view class="status">
+      {{status.convert(serviceDetail.status)}}
+    </view>
+  </view>
+  <view class="service-rating">
+    <view class="service-rating-title">历史评价</view>
+    <view class="service-rating-list">
+      <view class="service-rating-item" wx:for="{{ratingList}}" wx:key="index">
+        <i-service-rating rating="{{item}}"></i-service-rating>
+      </view>
+    </view>
+  </view>
+  <view class="service-button"></view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  登录
+    用户id 
+
+    用户的id  与 当前查看的服务id是否一致   
+
+    一致  发布者
+
+
+    不一致  消费者
+
+    HTTP 是一种短连接，每次请求结束后，即表示会话结束了，后续数据发生变化，客户端是无法感知到的
+
+
+
+    但是 ws 不同，它是一种长连接，客户端与服务端建立起 ws 连接之后，这个会话是可以一直持续存在的。也就是说，我们的客户端（前端）是可以持续的感知到数据的变化的（这里假设服务端已经开发了相应的接口和实现
+
+ -->
