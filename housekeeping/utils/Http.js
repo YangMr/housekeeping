@@ -14,7 +14,10 @@ class Http {
         url: APIConfig.baseUrl + url,
         method,
         data,
-        header
+        header : {
+          token : wx.getStorageSync('token'),
+          ...header
+        }
       })
 
       if (res.statusCode < 400) {

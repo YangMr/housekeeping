@@ -139,3 +139,21 @@
   padding-bottom: 30rpx;
   border-bottom: 1px solid #efefef;
 }
+
+.action-bar{
+  background-color: #fff;
+  width: 100%;
+  padding:30rpx;
+  box-sizing: border-box;
+  border-top:1px solid #efefef;
+  position: fixed;
+  bottom:0;
+  z-index : 2;
+}
+
+.action-bar-item{
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}

@@ -1,6 +1,5 @@
 var convert = function (status) {
   var statusText 
-  
   switch (status) {
     case 0 :
       statusText = '待审核';

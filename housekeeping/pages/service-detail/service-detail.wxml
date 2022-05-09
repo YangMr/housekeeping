@@ -51,7 +51,13 @@
       </view>
     </view>
   </view>
-  <view class="service-button"></view>
+  <view class="action-bar">
+        <view class="action-bar-item">
+            <button bindtap="handleChat">联系对方</button>
+            <button>预约服务</button>
+        </view>
+        <i-safe-area area="bottom"></i-safe-area> 
+  </view>
 </view>
 
 

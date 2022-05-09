@@ -13,7 +13,7 @@ Page({
     serviceDetail : {},
     // isPublisher 为false 的时候 , 是一个消费者 如果为true 发布者
     isPublisher : false,
-    ratingList : []
+    ratingList : [],
   },
 
   /**
@@ -59,6 +59,26 @@ Page({
       })
     }
 
+  },
+
+  /**
+   * 联系对方方法
+   */
+  handleChat : function (){
+    
+    const targetId= this.data.serviceDetail.publisher.id
+    const serviceDetail = JSON.stringify(this.data.serviceDetail)
+    const token = wx.getStorageSync('token')
+    if(!token){
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+      return
+    }
+
+    wx.navigateTo({
+        url : `/pages/conversation/conversation?targetUserId=${targetId}&service=${serviceDetail}`
+    })
   },
 
   /**

@@ -1,7 +1,7 @@
 <view class="container">
   <view class="left">
     <image class="cover-image" src="{{service.cover_image.path}}"></image>
-    <text class="type-tag">{{service.type === 1 ? '在提供' : '正在找'}}</text>
+    <text class="type-tag">{{service.type === serviceType.PROVIDE ? '在提供' : '正在找'}}</text>
   </view>
   <view class="right">
     <view class="row">
