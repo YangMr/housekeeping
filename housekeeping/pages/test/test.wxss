@@ -1,0 +1,49 @@
+/* pages/test/test.wxss */
+.container{
+  
+}
+.main{
+  padding:20rpx 20rpx 120rpx 20rpx ;
+
+}
+.message{
+  display: flex;
+  margin-top: 20rpx;
+  
+}
+.avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  margin-right:20rpx;
+}
+.text{
+  background-color: green;
+  border: 1px solid #f60;
+  padding : 10rpx;
+  border-radius: 5px;
+  color : #fff;
+}
+.footer{
+  background-color: #fff;
+  position: fixed;
+  bottom : 0;
+  width: 100%;
+  height: 90rpx;
+  padding:20rpx;
+  display: flex;
+}
+.input{
+  background-color: #ccc;
+  height: 90rpx;
+  flex : 1;
+}
+.send{
+  background-color: purple;
+  color : #fff;
+  border-radius: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}

@@ -1,1 +1,6 @@
-<view>会话页面</view>
+<view wx:for="{{_messageList}}" wx:key="index">
+
+  <text>{{item.from}} : </text>
+
+  <text>{{item.payload.text}}</text>
+</view>

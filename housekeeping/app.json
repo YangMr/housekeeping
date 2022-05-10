@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/service-detail/service-detail",
     "pages/conversation/conversation",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/test/test"
   ],
   "window": {
     "navigationBarBackgroundColor": "#fff",

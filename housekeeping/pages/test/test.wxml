@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="main">
+    <view class="message" style="{{item.flow === 'in' ? '' : 'flex-direction:row-reverse'}}"  wx:for="{{messageList}}" wx:key="index">
+      <view class="avatar">
+        <image src="{{item.avatar}}" class="avatar"></image>
+      </view>
+      <view class="text">{{item.payload.text}}</view>
+    </view>
+  </view>
+
+
+
+  <view class="footer">
+    <input type="text" value="{{text}}" class="input" bindinput="handleGetInput"/>
+    <view class="send" bind:tap="handleSendMessage">发送</view>
+  </view>
+
+  <i-safe-area area="bottom"></i-safe-area>
+</view>

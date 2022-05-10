@@ -4,7 +4,7 @@ import timConfig from "../config/tim"
 import genTestUserSig from "../lib/tim/generate-test-usersig"
 class Tim {
   // 初始化一个分页保存续拉消息id的变量
-  _nextReqMessageID = null
+  _nextReqMessageID = ""
 
   // 初始化一个分页保存消息列表变量
   _messageList = []
@@ -70,10 +70,10 @@ class Tim {
       // 用户分页续拉消息的id
       nextReqMessageID : this._nextReqMessageID,
       // 分页的数据条数
-      count : count || 15
+      count : count ? count :  15
     })
 
-    console.log(res)
+    console.log("kkk",res)
 
     // 保存会话消息列表
     this._messageList = res.data.messageList
@@ -81,6 +81,8 @@ class Tim {
     this._nextReqMessageID = res.data.nextReqMessageID
     // 保存是否已经拉完所有消息状态
     this._isCompleted = res.data.isCompleted
+
+    return this._messageList
   }
 
   // 重置消息会话列表, 解决进入会话页面时第一次数据的加载
@@ -91,10 +93,12 @@ class Tim {
      this._nextReqMessageID = null
      // 保存是否已经拉完所有消息状态
      this._isCompleted = false
+
+     return this
   }
 
   // sdk的登录方法
-  login(){
+   login(){
     // 获取本地存储的用户信息
     const userInfo = wx.getStorageSync('user-info')
     // 获取签名信息
@@ -107,6 +111,18 @@ class Tim {
     })
   }
 
+  // sdk的退出登录方法
+  logout(){
+    // 调用sdk的退出登录方法
+    this._SDKInstance.logout()
+  }
+
+  // 设置对应用户的消息为已读状态
+  async setMessageRead(targetUserId){
+    const res =await this._SDKInstance.setMessageRead({conversationID: `C2C${targetUserId}`})
+    // 这个消息已读的结果可要可不要
+    return res
+  }
 
 }
 

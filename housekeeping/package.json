@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mobx-miniprogram": "^4.13.2",
+    "mobx-miniprogram-bindings": "^2.1.5",
     "tim-upload-plugin": "^1.0.4",
     "tim-wx-sdk-ws": "^2.12.0"
   }
